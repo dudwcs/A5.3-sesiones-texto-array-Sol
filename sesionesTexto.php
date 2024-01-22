@@ -27,9 +27,14 @@ require_once 'util.php';
 
         if (isset($_POST["texto"])) {
             $texto = $_POST["texto"];
+            // if(!isset($_SESSION["textos"])){
+            //     $_SESSION["textos"] = array();                
+            // }
+            // array_push($_SESSION["textos"], $texto);
+
             $_SESSION["textos"][] = $texto;
 
-            print_r($_SESSION["textos"]);
+          //  print_r($_SESSION["textos"]);
         }
 
         if (isset($_SESSION["textos"]) && count($_SESSION["textos"]) > 0) {
@@ -54,11 +59,8 @@ require_once 'util.php';
                         <input type="text" id="texto" class="form-control" name="texto" required />
 
                     </div>
-
-
                     <!-- Submit button -->
                     <input type="submit" class="btn btn-primary btn-block mb-4" value="Añadir"></button>
-
 
                 </form>
             </div>
